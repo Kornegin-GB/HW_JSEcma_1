@@ -29,7 +29,7 @@ function findElementByClass(rootEl, classEl) {
       if (rootEl.className === classEl) {
          return rootEl;
       }
-      return findElementByClass(rootEl, classEl);
+      findElementByClass(rootEl, classEl);
    }
 }
 
