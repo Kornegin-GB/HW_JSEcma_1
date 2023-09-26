@@ -24,12 +24,12 @@ console.log(counter2.decrement());
 console.log('');
 // Задание 3
 function findElementByClass(rootEl, classEl) {
-   for (let index = 0; index < rootEl.children.length; index++) {
+   for (let index = 0; index < rootEl.childElementCount; index++) {
       rootEl = rootEl.children[index];
       if (rootEl.className === classEl) {
          return rootEl;
       }
-      findElementByClass(rootEl, classEl);
+      return findElementByClass(rootEl, classEl);
    }
 }
 
