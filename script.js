@@ -36,3 +36,7 @@ function findElementByClass(rootEl, classEl) {
 const rootElement = document.getElementById('root');
 const targetElement = findElementByClass(rootElement, 'my-class');
 console.log(targetElement);
+
+const rootElement_1 = document.getElementById('root1');
+const targetElement_1 = findElementByClass(rootElement_1, 'class4');
+console.log(targetElement_1);
