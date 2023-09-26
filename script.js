@@ -29,8 +29,8 @@ function findElementByClass(rootEl, classEl) {
       if (rootEl.className === classEl) {
          return rootEl;
       }
-      findElementByClass(rootEl, classEl);
    }
+   return findElementByClass(rootEl, classEl);
 }
 
 const rootElement = document.getElementById('root');
