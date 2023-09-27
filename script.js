@@ -23,20 +23,29 @@ console.log(counter2.decrement());
 
 console.log('');
 // Задание 3
+let serchElement = [];
 function findElementByClass(rootEl, classEl) {
-   for (let index = 0; index < rootEl.childElementCount; index++) {
-      rootEl = rootEl.children[index];
-      if (rootEl.className === classEl) {
-         return rootEl;
+   if (rootEl.hasChildNodes()) {
+      for (let element of rootEl.children) {
+         if (element.className === classEl) {
+            serchElement.push(element);
+            if (serchElement[0].className !== classEl) {
+               serchElement = [];
+               serchElement.push(element);
+            }
+         }
+         findElementByClass(element, classEl);
       }
    }
-   return findElementByClass(rootEl, classEl);
+   return serchElement[0];
 }
 
 const rootElement = document.getElementById('root');
-const targetElement = findElementByClass(rootElement, 'my-class');
+const targetElement = findElementByClass(rootElement, 'chaeld6');
 console.log(targetElement);
 
+console.log("");
+
 const rootElement_1 = document.getElementById('root1');
-const targetElement_1 = findElementByClass(rootElement_1, 'class4');
+const targetElement_1 = findElementByClass(rootElement_1, 'class5');
 console.log(targetElement_1);
